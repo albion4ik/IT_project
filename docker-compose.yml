@@ -1,0 +1,28 @@
+version: '3'
+services:
+  app:
+    build: .
+    container_name: python_app
+    ports:
+      - "5000:5000"  # Прокси для порта, который ваше приложение слушает
+    environment:
+      - DATABASE_URL=postgresql://postgres:solution@database:5432/g115-rest-db
+    depends_on:
+      - database
+    volumes:
+      - .:/app  # Чтобы изменения в коде автоматически синхронизировались
+
+  database:
+    image: postgres:latest
+    container_name: postgres_db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=solution
+      - POSTGRES_DB=g115-rest-db
+    ports:
+      - "5432:5432"  # Прокси для порта базы данных
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

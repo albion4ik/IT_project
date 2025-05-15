@@ -1,0 +1,145 @@
+/* styles.css */
+
+/* Сброс стандартных отступов и стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Стиль для фона */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%); /* Красивый фон */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Контейнер для формы и пользователей */
+.container, .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Заголовки */
+h1, h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Блоки форм */
+.form-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    color: #333;
+    border: 2px solid #f4f4f4;
+}
+
+.textbox {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.textbox input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.textbox input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+}
+
+button.btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.btn:hover {
+    background-color: #2980b9;
+}
+
+/* Стиль для текста на странице */
+p {
+    font-size: 14px;
+    color: #555;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Анимация появления */
+.user-card {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.user-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+.delete-btn {
+    background-color: #FF4C4C; /* Красный цвет для выделения */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px; /* Округлые углы */
+    transition: background-color 0.3s, transform 0.3s; /* Плавные изменения при наведении */
+}
+
+.delete-btn:hover {
+    background-color: #FF0000; /* Темно-красный цвет при наведении */
+    transform: scale(1.1); /* Увеличение кнопки при наведении */
+}
+
+.delete-btn:focus {
+    outline: none; /* Убираем контур при фокусе */
+}
